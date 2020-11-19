@@ -1,6 +1,6 @@
 """
-Functions for train RNN using modified version of FORCE (i.e. temporally restricted error kernel).
-Functions for test, train RNN using original FORCE, save data, training/test performance plots, evaluate error rate
+Functions to train RNN using modified version of FORCE (i.e. temporally restricted error kernel).
+Functions to test, train RNN using original FORCE, save data, training/test performance plots, evaluate error rate
 written in Python 3.8.3
 @ Elham
 """
