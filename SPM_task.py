@@ -1,6 +1,7 @@
 '''
 class to construct the experiment -- sequential pattern matching task
 written in Python 3.8.3
+@ Elham
 '''
 
 import numpy as np
