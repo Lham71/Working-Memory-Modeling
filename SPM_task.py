@@ -1,5 +1,5 @@
 '''
-class to construct the experiment -- sequential pattern matching task
+class to construct the experiment -- sequential pattern matching task (Task rule is the same as summation operation )
 written in Python 3.8.3
 @ Elham
 '''
