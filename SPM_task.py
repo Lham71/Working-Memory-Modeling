@@ -26,7 +26,7 @@ class sum_task_experiment:
         labels: MNIST labels
         seed: random seed
         '''
-        self.digit_size = digit_size
+        self.digit_size = digit_size 
         self.train_size = train_trials_size
         self.extra_train_size = ex_train_size
         self.test_size = test_trials_size
