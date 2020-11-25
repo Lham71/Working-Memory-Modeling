@@ -6,13 +6,14 @@ written in Python 3.8.3
 """
 
 print('train_force is executing\n')
+import time
+import pickle
 import numpy as np
 from scipy import sparse
 from matplotlib import pyplot as plt
 from drawnow import *
 from SPM_task import *
-import time
-import pickle
+
 
 
 
