@@ -1,6 +1,8 @@
-'''
-posthoc tests (to run on cluster)
-'''
+"""
+Posthoc tests (to forward simulate RNN and find attractor types form trial conclusions and evaluate the saturation ration after the RNN is trained to perform SPM task)
+written in Python 3.8.3
+@ Elham
+"""
 
 import numpy as np
 from SPM_task import *
@@ -11,10 +13,10 @@ from SPM_task import *
 def set_posthoc_params(x_ICs, r_ICs):
     ph_params = dict()
     ph_params['x_noise_var'] = 0.5 #determine type of attractor
-    ph_params['n_fw'] = 50 #  was 30
-    ph_params['n_ICs'] = 80 # at least 100
+    ph_params['n_fw'] = 50 # forward simulate the network (autonomously) for 50xTrial_length 
+    ph_params['n_ICs'] = 100 # NO. of initial conditions for finding fps
     ph_params['seed'] = 1
-    ph_params['ICs'] = {'r': r_ICs, 'x': x_ICs}
+    ph_params['ICs'] = {'r': r_ICs, 'x': x_ICs}. # ICs (x:state r:firing rate) saved after training
     ph_params['extend_delays'] = [5, 10, 15, 25, 35, 50, 100, 120, 150]
     #[5, 10, 15, 25, 50, 100, 150]
     ph_params['n_fw_end'] = 1  # fw from trial ends
