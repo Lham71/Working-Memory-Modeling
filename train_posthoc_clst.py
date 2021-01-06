@@ -1,7 +1,8 @@
 """
-main file to train RNN and perform posthoc tests
+main file to train/test RNN and perform posthoc tests on WashU cluster
 
-Elham -- June 2020
+written in Python 3.8.3
+@ Elham
 """
 import argparse
 import json
