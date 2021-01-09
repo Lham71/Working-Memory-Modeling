@@ -1,3 +1,10 @@
+'''
+Python script that takes arguments (hyperparameters of RNN) and automatically writes job files for submission on WashU cluster
+
+written in Python 3.8.3
+@ Elham
+'''
+
 import os
 import sys
 import argparse
