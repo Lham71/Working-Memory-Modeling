@@ -1,10 +1,12 @@
 '''
 based on the identified category of each trained model
 1. load each model parameter
-2. extend delay with high precision
-3. distraction
-4. interruption
+2. extend delay with high precision (persistence)
+3. distraction (robuustness to noise)
 this script should be isolated from other scripts
+
+written in Python 3.8.3
+@ Elham
 '''
 
 import argparse
@@ -12,8 +14,8 @@ import pickle
 from sum_task import *
 
 
-indir = '/scratch/elham/results3500c/'
-outdir = '/scratch/elham/Tests3500cNoiseCont/'
+indir = '/scratch/elham/results3500c/'   #directory containing trained models parameters
+outdir = '/scratch/elham/Tests3500cNoiseCont/'   # output directory for saving results
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-n', '--name', nargs='+', type=str)
@@ -34,7 +36,7 @@ def set_test_params(x_ICs, r_ICs):
     test_params['seed'] = 1
     test_params['ICs'] = {'r': r_ICs, 'x': x_ICs}
     test_params['extend_delays'] = np.arange(1,200,0.5)
-    test_params['n_fw_end'] = 1  # fw from trial ends
+    test_params['n_fw_end'] = 1  # forward simulate network from trial ends
     test_params['failure_thresh'] = 0.1  # |z_norm - z_extend|
     test_params['failure_type_thresh'] = 0.3  # |z_norm - z_settle|
     test_params['n_trial'] = 10 # n noisy trials
@@ -361,6 +363,8 @@ def distraction_robustness(params, test_params, digits_rep, labels):
     '''
     adding noise to the first stimulus
     return all_fails --> for all trials in test_params['n_trials'] returns a 2D list of size = n_trials X 16
+    16: there are 4 distinct trials ( 00, 01, 10, 11) and 4 distinct initial condition (i.e. trial conclusions), so overall there 
+    are 4*4=16 possible cases
     '''
     net_prs = params['network']
     task_prs = params['task']
