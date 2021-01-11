@@ -1,5 +1,6 @@
 # Slow manifolds in recurrent networks encode working memory efficiently and robustly
 For mathematical/model details please see a version of the manuscript on arXiv: 
+
 http://arxiv.org/abs/2101.03163
 
 ## Train Models
