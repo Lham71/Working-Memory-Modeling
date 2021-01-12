@@ -11,7 +11,7 @@ written in Python 3.8.3
 
 import argparse
 import pickle
-from sum_task import *
+from SPM_task import *
 
 
 indir = '/scratch/elham/results3500c/'   #directory containing trained models parameters
